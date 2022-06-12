@@ -1,27 +1,20 @@
-import MessageListItem from '../components/MessageListItem';
 import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
 import {
   IonContent,
   IonHeader,
-  IonList,
+  IonToolbar,
+  IonCol,
   IonPage,
   IonRefresher,
   IonRefresherContent,
   IonTitle,
-  IonToolbar,
-  useIonViewWillEnter
+  IonButton,
+  IonGrid,
+  IonRow,
 } from '@ionic/react';
 import './Home.css';
 
 const Home: React.FC = () => {
-
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
-  });
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -31,27 +24,39 @@ const Home: React.FC = () => {
 
   return (
     <IonPage id="home-page">
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
-        </IonToolbar>
+       <IonHeader>
+        <IonToolbar></IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonRefresher slot="fixed" onIonRefresh={refresh}>
           <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
-        </IonList>
+        <IonGrid>
+          <IonRow>
+            <IonTitle id="title" size="large">Hello!</IonTitle>
+          </IonRow>
+          <IonRow>
+            <IonCol></IonCol>
+            <IonCol>
+              <IonButton class="button" fill="outline" color="primary">Add Weight!</IonButton>
+            </IonCol>
+            <IonCol></IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol></IonCol>
+            <IonCol>
+              <IonButton class="button" fill="outline" color="secondary">See your progress!</IonButton>
+            </IonCol>
+            <IonCol></IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol></IonCol>
+            <IonCol>
+                <IonButton class="button" fill="outline" color="tertiary">Set your goals!</IonButton>
+            </IonCol>
+            <IonCol></IonCol>
+          </IonRow>
+        </IonGrid>
       </IonContent>
     </IonPage>
   );
