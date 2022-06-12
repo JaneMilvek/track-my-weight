@@ -1,0 +1,8 @@
+{
+  "name": "Track my Weight",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "b3f401cb"
+}

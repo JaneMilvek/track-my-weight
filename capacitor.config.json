@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Track my Weight",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
