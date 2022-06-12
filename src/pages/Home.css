@@ -1,0 +1,17 @@
+#title {
+    padding: 50px 0px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: lighter;
+}
+
+.button {
+    margin: 25px 0px;
+    width: 300px;
+    text-transform: initial;
+    font-weight: bold;
+}
+
+.header-md::after {
+    background-image: none;
+}
