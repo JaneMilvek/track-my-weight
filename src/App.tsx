@@ -3,6 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import ViewMessage from './pages/ViewMessage';
+import Weights from './pages/Weights';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -22,6 +23,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Goals from './pages/Goals';
+
 
 setupIonicReact();
 
@@ -37,6 +40,12 @@ const App: React.FC = () => (
         </Route>
         <Route path="/message/:id">
            <ViewMessage />
+        </Route>
+        <Route path="/goals">
+           <Goals />
+        </Route>
+        <Route path="/weights">
+           <Weights />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
